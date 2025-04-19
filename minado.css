@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: small;
+    background-color: rgb(11, 109, 207);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center; /* Centraliza o conteúdo */
+    font-family: 'Press Start 2P', cursive;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.playt {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-top: 10px;
+    display: none;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#turn-message {
+    color: white;
+    font-size: 1rem;
+}
+
+#board {
+    display: grid;
+    gap: 1px;
+    width: 50vw;  /* Tabuleiro ocupa 50% da largura da tela em telas maiores */
+    max-width: 600px; /* Limite de largura em telas grandes */
+    height: 30vh; /* Ajuste de altura para o tabuleiro */
+    margin: 10px auto; /* Centraliza o tabuleiro, com espaçamento à direita */
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    font-size: 1.2rem;  /* Tamanho confortável para as células */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    background-color: #eee;
+}
+
+.cell.bomb {
+    background-color: red;
+    color: white;
+}
+
+.cell.safe {
+    background-color: green;
+    color: white;
+}
+
+#controls {
+    margin-top: 12px;
+}
+
+#rei {
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 600px) {
+    #board {
+        width: 80vw;  /* Tabuleiro ocupa 80% da largura da tela em dispositivos pequenos */
+        height: 40vh; /* Tabuleiro ocupa 40% da altura da tela em dispositivos pequenos */
+        margin: 10px auto; /* Centraliza o tabuleiro, com mais espaço à direita */
+    }
+
+    .cell {
+        font-size: 1rem; /* Ajuste da fonte para telas pequenas */
+    }
+
+    .playt, #rei {
+        width: 80%; /* Botões ocupando 80% da largura da tela em dispositivos pequenos */
+    }
+    
+    #rei {
+        margin-top: 20px;
+        width: 80%; /* Botões ocupando 80% da largura da tela em dispositivos pequenos */
+    }
+    
+}
+
+/* Ajuste para telas maiores */
+@media screen and (min-width: 1024px) {
+    #scoreboard {
+        position: relative;
+        margin-bottom: 15px;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%); /* Centraliza o placar no topo */
+    }
+
+    #board {
+        margin: 20px; /* Centraliza o tabuleiro */
+        margin-bottom: 260px;
+        width: 50vw;  /* Tabuleiro ocupa 50% da largura da tela */
+        max-width: 600px; /* Limite de largura do tabuleiro */
+        height: 10vh; /* Altura ajustada para o tabuleiro */
+    }
+
+    #rei {
+        margin-top: 300px;
+        width: 80%; /* Botões ocupando 80% da largura da tela em dispositivos pequenos */
+    }
+}
