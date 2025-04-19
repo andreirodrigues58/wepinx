@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="minado.css">
+    <title>WEPINX - Campo Minado</title>
+</head>
+<body>
+
+    <div id="menu">
+        <h1>Escolha o modo de jogo:</h1>
+        <br><br>
+        <button class="playt" onclick="startGame(1)">1 jogador</button>
+        <button class="playt" onclick="startGame(2)">2 jogadores</button>
+    </div>
+
+    <div id="game" style="display: none;">
+        <div id="scoreboard">
+            <p id="player1-score">Player 1:0</p>
+            <p id="player2-score" style="display:none;">Player 2:0</p>
+        </div>
+        <p id="turn-message" style="display: none;">Vez do Jogador 1</p> <!-- Inicialmente escondido -->
+        <div id="board"></div>
+        <button id="rei" onclick="resetGame()">Reiniciar</button>
+    </div>
+
+<script src="minado.js"></script>
+
+</body>
+</html>
